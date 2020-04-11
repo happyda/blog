@@ -1,0 +1,66 @@
+{% extends "basic.html" %}
+{% block content %}
+    <section class="hero is-black">
+      <div class="hero-body">
+        <div class="container is-marginless">
+          <h1 class="title">
+            Hero title
+          </h1>
+          <h2 class="subtitle">
+            Hero subtitle
+          </h2>
+        </div>
+      </div>
+    </section>
+      <section class="section">
+        <div class="container">
+              <div class="columns">
+                <div class="column">
+                  {% for post in getposts %}
+                  {% if loop.index0 % 2 == 0 %}
+                  <div class="card initial-scale">
+                    <div class="card-content">
+      
+                      <div class="media">
+                        <div class="media-left">
+                          <div class="mydate"><p>25 <span>五月</span></p></div>
+                        </div>
+                        <div class="media-content">
+                          <p class="title is-4">{{ post['post-title'] }}</p>
+                          <p class="subtitle is-6">@Starry Wang</p>
+                        </div>
+                      </div>
+
+                      <div class='content'> {{ post['post-content'] }}<br><small>{{ post['post-date'] }}</small></div>
+
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+                <div class="column">
+                  {% for post in getposts %}
+                  {% if loop.index0 % 2 != 0 %}
+                  <div class="card initial-scale">
+                    <div class="card-content">
+                      
+                      <div class="media">
+                        <div class="media-left">
+                          <div class="mydate"><p>25 <span>五月</span></p></div>
+                        </div>
+                        <div class="media-content">
+                          <p class="title is-4">{{ post['post-title'] }}</p>
+                          <p class="subtitle is-6">@Starry Wang</p>
+                        </div>
+                      </div>
+
+                      <div class='content'> {{ post['post-content'] }}<br><small>{{ post['post-date'] }}</small></div>
+
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+      </section>
+{% endblock content %}
