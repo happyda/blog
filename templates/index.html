@@ -4,17 +4,17 @@
       <div class="hero-body">
         <div class="container is-marginless">
           <h1 class="title">
-            Hero title
+            紹宇的Blog
           </h1>
           <h2 class="subtitle">
-            Hero subtitle
+            記錄我的生活
           </h2>
         </div>
       </div>
     </section>
       <section class="section">
         <div class="container">
-              <div class="columns">
+              <div class="columns is-4">
                 <div class="column">
                   {% for post in getposts %}
                   {% if loop.index0 % 2 == 0 %}
@@ -23,7 +23,7 @@
       
                       <div class="media">
                         <div class="media-left">
-                          <div class="mydate"><p>25 <span>五月</span></p></div>
+                          <div class="mydate"><p>5<span>五月</span></p></div>
                         </div>
                         <div class="media-content">
                           <p class="title is-4">{{ post['post-title'] }}</p>
@@ -43,10 +43,10 @@
                   {% if loop.index0 % 2 != 0 %}
                   <div class="card initial-scale">
                     <div class="card-content">
-                      
+
                       <div class="media">
                         <div class="media-left">
-                          <div class="mydate"><p>25 <span>五月</span></p></div>
+                          <div class="mydate"><p>5<span>{{ moment().format('MMMM') }}</span></p></div>
                         </div>
                         <div class="media-content">
                           <p class="title is-4">{{ post['post-title'] }}</p>

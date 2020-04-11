@@ -1,6 +1,9 @@
 from flask import Flask, render_template, url_for
+from flask_moment import Moment
+from datetime import datetime, date
 
 app = Flask(__name__)
+moment = Moment(app)
 
 post = [ 
     { 
@@ -30,7 +33,8 @@ post = [
 
 @app.route("/")
 def home():
-    return render_template('index.html', name='Home page', getposts=post )
+    now = datetime.utcnow()
+    return render_template('index.html', name='Home page', getposts=post)
 
 @app.route("/about")
 def about():

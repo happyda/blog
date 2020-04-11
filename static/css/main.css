@@ -1,12 +1,17 @@
         .content {
              font-family:'Courier New', Courier, monospace;
              font-size: x-large;
+             padding-bottom: 1rem;
          }
 
+        .container {
+                    align-items: stretch;
+        }
         .card-content {
-                    height: 866px;
+                    margin-top: 1.5rem;
                     width: auto;
          }
+
 
         .mydate {
                     margin-top: -10px;
