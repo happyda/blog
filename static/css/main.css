@@ -1,17 +1,52 @@
-        .content {
+        /*.content {
              font-family:'Courier New', Courier, monospace;
-             font-size: x-large;
-             padding-bottom: 1rem;
          }
-
-        .container {
-                    align-items: stretch;
+        .hero .buttons {
+            padding: 5px;
+            margin-left: 5px;
         }
-        .card-content {
-                    margin-top: 1.5rem;
-                    width: auto;
+         */
+
+        .collepse-menu {
+                background-color: transparent;
+                float:right;
+                padding: 0px;
+                margin: 2px;
+                outline-style: solid;
+                outline-color: rgb(116, 113, 113);
+                outline-width: 1px;
+        }
+        .navbar-item-right {
+                font-size: 1.0em;
+                padding: 0px 5px 0 1px ;
+                margin: 1px;
+                float: right;
+        }
+
+        .box {
+                margin-top: 1.5rem;
+                width: auto;
+                height: 320px;
+                overflow: hidden;
          }
 
+        @media screen and (max-width:470px) {
+            
+
+            .collepse-menu {
+                float: left;
+                padding: 5px;
+                margin: 7px;
+                margin-top: -20px;
+            }
+
+            .navbar-item-right  {
+                font-size: 0vh;
+                justify-items: center;   
+                float: left;   
+            }
+
+        }
 
         .mydate {
                     margin-top: -10px;
@@ -41,11 +76,42 @@
                     background: -webkit-linear-gradient(top, #d10000 0%, #7a0909 100%);
                     font-size: 16px; font-weight: bold; color: #fff; text-transform: uppercase; 	
                     display: block;
-                    border-top: 2px solid #a13838;
+                    border-top: 0 solid #a13838;
                     border-radius: 0 0 5px 5px;
                     -moz-border-radius: 0 0 5px 5px;
                     -webkit-border-radius: 0 0 5px 5px;
                     padding: 2px 0 2px 0;
+        }
+
+        /* center form */
+        .form-center {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                
+                /* Nope =( 
+                margin-left: 25%;
+                margin-top: 25%;
+                */
+              
+                /* 
+                Yep!
+                */
+                transform: translate(-50%, -50%);
+                
+                /*
+                Not even necessary really. 
+                e.g. Height could be left out!
+                */
+                width: 40%;
+                height: 50%;
+                
+                
+        }
+
+        .field input {
+                border-style: solid;
+                border-radius: 5px;
         }
 
         @-moz-document url-prefix() {

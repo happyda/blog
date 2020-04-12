@@ -1,0 +1,96 @@
+{% extends "basic.html" %}
+{% block content %}
+<div>
+<section class="hero is-dark">
+  <nav class="hero-head">
+	<div class="columns">
+      <div class="column left">
+        <a class="navbar-item" href="https://bulma.io">
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        </a>
+      </div>
+
+		<div class="column right">
+        <a class="collepse-menu">
+            <i class="fas fa-bars"></i>
+        </a>
+        <div class="navbar-item-right">
+          <a class="navbar-item-right" href="{{ url_for('home') }}">Blog</a>
+          <a class="navbar-item-right" href="{{ url_for('about') }}">關於</a>
+          <a class="navbar-item-right" href="{{ url_for('register') }}">註冊</a>
+          <a class="navbar-item-right" href="{{ url_for('login') }}">登入</a> 
+        </div>
+		</div>
+
+	</div>
+  </nav>
+
+    <div class="hero-body">
+        <div class="container is-marginless">    
+          <h1 class="title">紹宇的Blog</h1>
+          <h2 class="subtitle">記錄我的生活</h2>
+        </div>
+    </div>
+</section>
+</div>     
+      <!-- 表格區域 -->
+    <div class="form-center">
+                <div class="container is-fluid">
+                    <div class="field">
+                    <label class="label is-marginless">姓名</label>
+                    <p class="control">
+                        <input class="input" type="text" placeholder="例如： 王小明">
+                    </p>
+                    </div>
+                    
+                    <div class="field">
+                    <label class="label">使用者ID</label>
+                    <p class="control has-icon has-icon-left">
+                        <input class="input" type="text" placeholder="使用者 ID">
+                        <span class="icon is-small">
+                        <i class="far fa-id-card"></i>
+                        </span>
+                    </p>
+                    </div>
+                    
+                    <div class="field">
+                    <label class="label">電子郵件</label>
+                    <p class="control has-icon has-icon-left">
+                        <input class="input" type="text" placeholder="abc@abc.com" >
+                        <span class="icon is-small">
+                        <i class="far fa-envelope"></i>
+                        </span>
+                    </p>
+                    </div>
+
+                    <div class='field'>
+                        <labe class="password">密碼</labe>
+                        <p class="control has-icon has-icon-left">
+                        <input class="input" type="password">
+                        <span class="icon is-small">
+                        <i class="fas fa-lock"></i>
+                        </span>
+                        </p>
+                    </div>
+
+                    <div class='field'>
+                        <labe class="password">再次確認密碼</labe>
+                        <p class="control has-icon has-icon-left">
+                        <input class="input" type="password">
+                        <span class="icon is-small">
+                        <i class="fas fa-lock"></i>
+                        </span>
+                        </p>
+                    </div>
+
+                    <div class="field is-grouped">
+                    <p class="control">
+                        <button class="button is-primary">Submit</button>
+                    </p>
+                    <p class="control">
+                        <button class="button is-gray">Cancel</button>
+                    </p>
+                    </div>
+                </div>
+    </div>         
+{% endblock %}
