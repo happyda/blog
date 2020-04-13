@@ -1,8 +1,11 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect
+from forms import RegisterForm, LoginForm
+from datetime import date, datetime
 from flask_moment import Moment
-from datetime import datetime, date
+
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'youwillneverguess!'
 moment = Moment(app)
 
 post = [ 
@@ -33,20 +36,23 @@ post = [
 
 @app.route("/")
 def home():
-    now = datetime.utcnow()
     return render_template('index.html', name='Home page', getposts=post)
 
 @app.route("/about")
 def about():
     return render_template('about.html',name='關於')
 
-@app.route("/login")
+@app.route("/login", methods=['GET','POST'])
 def login():
-    return render_template('login.html',name='登入')
+    form = LoginForm()
+    if form.is_submitted() and form.validate():
+        return redirect(url_for('home'))
+    return render_template('login.html',name='登入', form=form)
 
-@app.route("/register")
+@app.route("/register", methods=['GET','POST'])
 def register():
-    return render_template('register.html',name='註冊')
+    form = RegisterForm()
+    return render_template('register.html',name='註冊',form=form)
     
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0', port=5000);

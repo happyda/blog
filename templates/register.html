@@ -31,22 +31,28 @@
           <h2 class="subtitle">記錄我的生活</h2>
         </div>
     </div>
+    
 </section>
 </div>     
       <!-- 表格區域 -->
+
+    <form method= "POST" action="" >
     <div class="form-center">
                 <div class="container is-fluid">
+                    <div>{{ form.csrf_token }}</div>
+                    
+                    </div>
                     <div class="field">
                     <label class="label is-marginless">姓名</label>
                     <p class="control">
-                        <input class="input" type="text" placeholder="例如： 王小明">
+                         {{ form.realname(class="input",placeholder="ex: 王小明")}}
                     </p>
                     </div>
                     
                     <div class="field">
-                    <label class="label">使用者ID</label>
+                    <label class="label is-marginless">使用者ID</label>
                     <p class="control has-icon has-icon-left">
-                        <input class="input" type="text" placeholder="使用者 ID">
+                         {{ form.username(class="input")}}
                         <span class="icon is-small">
                         <i class="far fa-id-card"></i>
                         </span>
@@ -54,9 +60,9 @@
                     </div>
                     
                     <div class="field">
-                    <label class="label">電子郵件</label>
+                    <label class="label is-marginless">電子郵件</label>
                     <p class="control has-icon has-icon-left">
-                        <input class="input" type="text" placeholder="abc@abc.com" >
+                        {{ form.email(class="input",placeholder="abc@abc.com")}}
                         <span class="icon is-small">
                         <i class="far fa-envelope"></i>
                         </span>
@@ -64,9 +70,9 @@
                     </div>
 
                     <div class='field'>
-                        <labe class="password">密碼</labe>
+                        <labe class="label is-marginless">密碼</labe>
                         <p class="control has-icon has-icon-left">
-                        <input class="input" type="password">
+                         {{ form.password(class="input")}}
                         <span class="icon is-small">
                         <i class="fas fa-lock"></i>
                         </span>
@@ -74,23 +80,27 @@
                     </div>
 
                     <div class='field'>
-                        <labe class="password">再次確認密碼</labe>
+                        <labe class="label is-marginless">再次確認密碼</labe>
                         <p class="control has-icon has-icon-left">
-                        <input class="input" type="password">
+                        {{ form.password(class="input",value="請輸入密碼")}}
                         <span class="icon is-small">
                         <i class="fas fa-lock"></i>
                         </span>
                         </p>
                     </div>
-
                     <div class="field is-grouped">
                     <p class="control">
-                        <button class="button is-primary">Submit</button>
+                        <button class="button is-primary" type="submit" >Submit</button>
                     </p>
                     <p class="control">
                         <button class="button is-gray">Cancel</button>
                     </p>
                     </div>
+
+                    <div class="help is-small">己有帳號 ？ <a href="{{ url_for('login') }}">登入</a>
+                    </div>
+
                 </div>
-    </div>         
+    </div>
+</form>       
 {% endblock %}
